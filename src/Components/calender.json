@@ -1,0 +1,452 @@
+[
+    {
+      "month": "Mar 2023",
+      "events": [
+        {
+          "date": "Wed 8th",
+          "event": "Festival of Jagannath Misra",
+          "breakingFast": "—"
+        },
+        {
+          "date": "Sat 18th",
+          "event": "Ekadashi",
+          "breakingFast": "Next day after Sunrise"
+        },
+        {
+          "date": "Thu 30th",
+          "event": "Sri Rama Navami",
+          "breakingFast": "Fasting till Sunset"
+        }
+      ]
+    },
+    {
+      "month": "Apr 2023",
+      "events": [
+        {
+          "date": "Sun 2nd",
+          "event": "Vyanjuli Mahadvadasi (Fasting for Ekadashi vrata)",
+          "breakingFast": "Next day after Sunrise"
+        },
+        {
+          "date": "Tue 4th",
+          "event": "Their Lordships’ 26th Brahmotsava celebrations begin (in ISKCON Bangalore) – Dhvaja Arohana",
+          "breakingFast": "—"
+        },
+        {
+          "date": "Thu 6th",
+          "event": "Hanuman Jayanti (in ISKCON Bangalore)",
+          "breakingFast": "According to local and Udupi Panchanga"
+        },
+        {
+          "date": "Thu 13th",
+          "event": "Brahma Ratha",
+          "breakingFast": "—"
+        },
+        {
+          "date": "Sat 15th",
+          "event": "Brahmotsava celebrations End (in ISKCON Bangalore) – Dhvaja Avarohana",
+          "breakingFast": "—"
+        },
+        {
+          "date": "Sat 15th",
+          "event": "Beginning of Salagrama & Tulasi Jala Dana",
+          "breakingFast": "—"
+        },
+        {
+          "date": "Sun 16th",
+          "event": "Ekadashi",
+          "breakingFast": "Next day after Sunrise"
+        },
+        {
+          "date": "Sun 23rd",
+          "event": "Akshaya Tritiya",
+          "breakingFast": "—"
+        }
+      ]
+    },
+    {
+        "month": "May 2023",
+        "events": [
+          {
+            "date": "Mon 1st",
+            "event": "Chandan Yatra of Sri Prahlada Narasimha begins (in ISKCON Bangalore)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Mon 1st",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Thu 4th",
+            "event": "Narasimha Chaturdashi: Appearance of Lord Narasimhadeva",
+            "breakingFast": "Fasting till dusk"
+          },
+          {
+            "date": "Sun 14th",
+            "event": "End of Salagrama & Tulasi Jala Dana",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Mon 15th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Wed 31st",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          }
+        ]
+      },
+      {
+        "month": "June 2023",
+        "events": [
+          {
+            "date": "Fri 2nd",
+            "event": "Panihati Chida Dahi Utsava",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Sun 4th",
+            "event": "Jagannatha Snana Yatra",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Wed 14th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Sun 18th",
+            "event": "Srila Bhaktivinoda Thakura – Disappearance",
+            "breakingFast": "Fasting till noon"
+          },
+          {
+            "date": "Tue 20th",
+            "event": "Jagannatha Puri Ratha Yatra",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Wed 28th",
+            "event": "Sudarshana Jayanti at Iskcon temple, HK hill & VK hill, Bangalore",
+            "breakingFast": "According to TTD, Kumbhakonam, Srirangam, and Ahobilam Panchanga"
+          },
+          {
+            "date": "Wed 28th",
+            "event": "Jagannatha Puri Bahuda Ratha Yatra",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Thu 29th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          }
+        ]
+      },
+      {
+        "month": "Jul 2023",
+        "events": [
+          {
+            "date": "Mon 3rd",
+            "event": "First month of Chaturmasya begins. Fasting from Shak (green leafy vegetables) for one month",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Thu 13th",
+            "event": "Founding Day (As per the Founding Document: CERTIFICATE OF INCORPORATION OF ISKCON)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Thu 13th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Tue 18th",
+            "event": "Purushottama Adhika Masa begins (Chaturmasya Vrata is not observed during Adhika Masa ie. From 18th July to 16th Aug)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Sat 29th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          }
+        ]
+      },
+      {
+        "month": "Aug 2023",
+        "events": [
+          {
+            "date": "Sat 12th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Sun 13th",
+            "event": "Jaladuta’s Voyage of Compassion begins (as per Jaladuta Diary)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Wed 16th",
+            "event": "Purushottama Adhika Masa ends",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Thu 17th",
+            "event": "First month of Chaturmasya vrata continues",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Mon 21st",
+            "event": "Garuda Panchami (in ISKCON Bangalore)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Sun 27th",
+            "event": "Ekadashi and Jhulan Yatra begins",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Thu 31st",
+            "event": "Balarama Jayanthi: Appearance of Lord Balarama Jhulan Yatra ends Second month of Chaturmasya begins. Fasting from yogurt for one month.",
+            "breakingFast": "Fasting till noon"
+          }
+        ]
+      },
+      {
+        "month": "Sep 2023",
+        "events": [
+          {
+            "date": "Wed 6th",
+            "event": "Sri Krishna Janmashtami Celebrations (1st day)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Thu 7th",
+            "event": "Sri Krishna Janmashtami Celebrations (2nd day) Appearance of Lord Sri Krishna",
+            "breakingFast": "Fasting till midnight"
+          },
+          {
+            "date": "Fri 8th",
+            "event": "Nandotsava Sri Vyasa Puja: Appearance of Srila Prabhupada",
+            "breakingFast": "Fasting till noon"
+          },
+          {
+            "date": "Sun 10th",
+            "event": "Srila Prabhupada’s Vyasa Puja Smaranam (in ISKCON Bangalore)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Mon 11th",
+            "event": "Paksha Vardhini Maha-Dvadasi (Fasting for Ekadashi vrata)",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Tue 19th",
+            "event": "Jaladuta’s Voyage of Compassion ends (as per Jaladuta Diary )",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Sat 23rd",
+            "event": "Radhashtami: Appearance of Srimati Radharani",
+            "breakingFast": "Fasting till noon"
+          },
+          {
+            "date": "Tue 26th",
+            "event": "Fasting for Ekadashi Vrata Fasting till noon today in addition to regular Ekadashi fasting. Next day Feast after Sunrise",
+            "breakingFast": "Fasting till noon today in addition to regular Ekadashi fasting. Next day Feast after Sunrise"
+          },
+          {
+            "date": "Tue 26th",
+            "event": "Vamana Jayanthi: Appearance of Lord Vamanadeva",
+            "breakingFast": "Fasting till noon"
+          },
+          {
+            "date": "Wed 27th",
+            "event": "Srila Bhaktivinoda Thakura – Appearance Fasting observed the previous day till noon",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Fri 29th",
+            "event": "Acceptance of sannyasa by Srila Prabhupada (Srila Prabhupada sannyasa smriti) Third month of Chaturmasya begins. Fasting from milk for one month.",
+            "breakingFast": "—"
+          }
+        ]
+      },
+      {
+        "month": "Oct 2023",
+        "events": [
+          {
+            "date": "Tue 10th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Tue 24th",
+            "event": "Vijaya Dashami – Dusshera Festival (in Mysore)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Wed 25th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Sat 28th",
+            "event": "Fourth month of Chaturmasya begins. Fasting from Urad dal for one month. KARTHIKA MONTH BEGINS DEEPOTSAVA BEGINS (in ISKCON Bangalore)",
+            "breakingFast": "—"
+          }
+        ]
+      },
+      {
+        "month": "Nov 2023",
+        "events": [
+          {
+            "date": "Thu 9th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Tue 14th",
+            "event": "Govardhana Puja, Go Puja",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Fri 17th",
+            "event": "Srila Prabhupada – Disappearance",
+            "breakingFast": "Fasting till noon"
+          },
+          {
+            "date": "Thu 23rd",
+            "event": "Srila Gaura Kishora Dasa Babaji – Disappearance & Ekadashi",
+            "breakingFast": "Fasting till noon today in addition to regular Ekadashi fasting. Next day Feast after Sunrise"
+          },
+          {
+            "date": "Mon 27th",
+            "event": "Chaturmasya ends. KARTHIKA MONTH ENDS, DEEPOTSAVA ENDS (in ISKCON Bangalore)",
+            "breakingFast": "—"
+          }
+        ]
+      },
+      {
+        "month": "Dec 2023",
+        "events": [
+          {
+            "date": "Sun 3rd",
+            "event": "Srila Prabhupada Book Distribution Festival Inauguration (in ISKCON Bangalore)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Tue 5th",
+            "event": "Srila Prabhupada Diksha Diwasa",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Sat 9th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Sat 16th",
+            "event": "Kirtan Mela (in ISKCON Bangalore)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Sun 17th",
+            "event": "International Kirtan Mela",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Sat 23rd",
+            "event": "Gita Jayanti and Fasting for Ekadashi Vrata",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Sat 23rd",
+            "event": "Vaikuntha Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Sun 31st",
+            "event": "Srila Bhaktisiddhanta Sarasvati Thakura – Disappearance",
+            "breakingFast": "Fasting till noon"
+          }
+        ]
+      },
+      {
+        "month": "Jan 2024",
+        "events": [
+          {
+            "date": "Sun 7th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Sun 21st",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          }
+        ]
+      },
+      {
+        "month": "Feb 2024",
+        "events": [
+          {
+            "date": "Sun 4th",
+            "event": "Srila Prabhupada Book Distribution Festival Closing Ceremony and Prize Distribution (in ISKCON Bangalore)",
+            "breakingFast": "—"
+          },
+          {
+            "date": "Tue 6th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Fri 16th",
+            "event": "Sri Advaita Acharya – Appearance",
+            "breakingFast": "Fasting till noon"
+          },
+          {
+            "date": "Tue 20th",
+            "event": "Ekadashi",
+            "breakingFast": "Fasting till noon today in addition to regular Ekadashi fasting. Next day Feast after Sunrise"
+          },
+          {
+            "date": "Wed 21st",
+            "event": "Sri Varahadeva – Appearance",
+            "breakingFast": "Fasting observed the previous day till noon"
+          },
+          {
+            "date": "Thu 22nd",
+            "event": "Nityananda Trayodashi: Appearance of Sri Nityananda Prabhu",
+            "breakingFast": "Fasting till noon"
+          },
+          {
+            "date": "Thu 29th",
+            "event": "Srila Bhaktisiddhanta Sarasvati Thakura – Appearance",
+            "breakingFast": "Fasting till noon"
+          }
+        ]
+      },
+      {
+        "month": "Mar 2024",
+        "events": [
+          {
+            "date": "Thu 7th",
+            "event": "Dvadasi (Fasting for Ekadashi vrata)",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Wed 20th",
+            "event": "Ekadashi",
+            "breakingFast": "Next day after Sunrise"
+          },
+          {
+            "date": "Mon 25th",
+            "event": "Sri Gaura Poornima: Appearance of Sri Chaitanya Mahaprabhu",
+            "breakingFast": "Fasting till Moonrise"
+          }
+        ]
+      }
+  ]
