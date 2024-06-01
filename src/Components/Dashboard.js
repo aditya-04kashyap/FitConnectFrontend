@@ -4,45 +4,53 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faAddressCard, faHistory, faComment, faUser, faInfoCircle, faSignOutAlt, faBars, faTimes,faUserFriends ,faEdit} from '@fortawesome/free-solid-svg-icons';
 import { Link as llink, useNavigate } from 'react-router-dom';
 import Background from '../imags/loginBackground.png';
-import Calendar from './calender.js';
-import EventCalendarData from './calender.json';
-import logo from '../imags/logo.png';
-import Edit from './editProfile.js';
-import FriendsList from './friends.js';
-import Sadhana from './sadhanaCard.js';
-import Message from './message.js';
-import Rec from './recievedMessage.js';
+import logo from '../imags/FitConnect.png';
+
+
 const Dashboard = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem('authToken');
     navigate('/');
   };
+  const handleEdit = () => {
+    
+    navigate('/editProfile');
+  };
+
+  const handleSadhana = () => {
+    
+    navigate('/sadhana');
+  };
+
+  const handleHistory = () => {
+    
+    navigate('/history');
+  };
+
+  const handleFriends = () => {
+    
+    navigate('/friends');
+  };
+  
   const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
-  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 640);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1000);
   const [showSidebar, setShowSidebar] = useState(!isSmallScreen);
 
   const quotes = [
-    "The purpose of chanting is to purify the heart. As gold when it is put into fire, all the impurities are taken away. Similarly, when you chant Hare Krishna, your heart is cleansed of all material nonsense. ",
-    "Krishna consciousness means to be always satisfied and happy in any condition of life. The devotee does not care whether he is in heaven or in hell: he is satisfied in any condition. ",
-    "Chanting is the process of cleansing the mirror of the mind. ",
-    "The more you increase your attachment for Krishna, the more you become free from material entanglement.",
-    "Krishna is the eternal, all-blissful, all-knowing Personality of Godhead. He is the reservoir of all pleasure.",
-    "The process of Krishna consciousness is the process of transcending the modes of material nature and coming to the platform of pure goodness." ,
-    "Krishna is the ultimate goal of life, and the process of Krishna consciousness is the process of attaining that goal." ,
-    "Krishna consciousness is not an artificial imposition on the mind. This consciousness is the original energy of the living entity." ,
-    "The chanting of the holy name of Krishna expands the blissful ocean of transcendental life." ,
-    "In Krishna consciousness, one comes directly into communion with Krishna, and thus all directions from Krishna may be understood in that transcendental state.",
-    "Krishna consciousness is not an ordinary, mundane activity. It is the most valuable engagement that anyone can participate in." ,
-    "The process of Krishna consciousness is the process of understanding one's real identity." ,
-    "Devotees of Krishna have a sincere and natural interest in the welfare of all living entities." ,
-    "In the material world, one’s attempts to render service to others are all ailing." ,
-    "Krishna consciousness is not theoretical. It is practical application of the science of the soul." ,
-    "Chanting is the waxing moon that spreads the white lotus of good fortune for all living entities." ,
-    "One who has unflinching devotion for the Personality of Godhead has all the good qualities of the demigods." ,
-    "The highest perfection of human life, achieved either by complete knowledge of matter and spirit, by practice of mystic powers, or by perfect discharge of occupational duty, is to remember the Personality of Godhead at the end of life." ,
-    "In the material world, everyone is envious of everyone else, and therefore there is competition." ,
-    "Krishna consciousness means to be always situated in the perfect order of bhakti-yoga, free from all material contamination." 
+    "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+    "Push yourself because no one else is going to do it for you.",
+    "Small steps every day add up to big results.",
+    "Strength doesn’t come from what you can do. It comes from overcoming the things you once thought you couldn’t.",
+    "The body achieves what the mind believes.",
+    "It’s not about having time; it’s about making time—with your gym buddies.",
+    "The pain you feel today will be the strength you feel tomorrow, and your friends will be there to see it.",
+    "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle—and your friends believe it too.",
+    "Your body can stand almost anything. It’s your mind that you have to convince.",
+    "Success starts with self-discipline. Keep pushing forward.",
+    "Don’t limit your challenges. Challenge your limits.",
+    "Every workout is progress, no matter how small.",
+    "You don’t have to be extreme, just consistent."
   ];
 
   useEffect(() => {
@@ -59,12 +67,11 @@ const Dashboard = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 640);
+      setIsSmallScreen(window.innerWidth <= 1000);
       if (!isSmallScreen) {
-        setShowSidebar(true); // Reset sidebar visibility on resize for larger screens
+        setShowSidebar(true); 
       }
     };
-
     window.addEventListener('resize', handleResize);
 
     return () => {
@@ -73,91 +80,86 @@ const Dashboard = () => {
   }, [isSmallScreen]);
 
   return (
-    <div className="flex h-screen bg-white">
-      {isSmallScreen && (
-        <div className="sm:hidden fixed top-0 right-0 p-4">
-          <button className=' backdrop-blur-3xl bg-gradient-to-r from-yellow-100 to-orange-100 rounded-lg ' onClick={() => setShowSidebar(!showSidebar)}>
-            {showSidebar ? (
-              <FontAwesomeIcon icon={faTimes} size="2x" />
-            ) : (
-              <FontAwesomeIcon icon={faBars} size="2x" />
-            )}
-          </button>
-        </div>
-      )}
+    <div className="flex  bg-white">
+     {isSmallScreen && (
+      <div className="lg:hidden fixed top-0 right-0 p-4">
+        <button className='bg-lime-300 p-1 rounded-lg' onClick={() => setShowSidebar(!showSidebar)}>
+          {showSidebar ? (
+            <FontAwesomeIcon icon={faTimes} size="2x" />
+          ) : (
+            <FontAwesomeIcon icon={faBars} size="2x" />
+          )}
+        </button>
+      </div>
+        )}
 
-      <div className={`w-4/5 sm:z-0 z-50 sm:w-64 shadow-yellow-300  md:w-64 p-4 shadow-lg rounded-tr-lg fixed top-0 left-0 h-full overflow-y-auto bg-cover ${isSmallScreen ? (showSidebar ? 'w-3/4' : 'hidden') : ''}`} style={{ backgroundImage: `url(${Background})` }}>
-        <h2 className="sm:text-4xl text-5xl  font-LO text-zinc-800 mb-8 md:mb-16  ">Hare Krishna</h2>
+      <div className={`w-4/5 lg:z-0 z-10  shadow-gray-700  lg:w-64 p-4 shadow-lg rounded-tr-sm fixed top-0 left-0 h-full overflow-y-auto bg-cover ${isSmallScreen ? (showSidebar ? 'w-3/4' : 'hidden') : ''}`} style={{ backgroundImage: `url(${Background})` }}>
+        <h2 className="sm:text-4xl z-1 text-5xl  font-LO  text-white mb-8 md:mb-16  ">FitConnect</h2>
         <ul>
-          <li className="mb-7  md:mb-5  text-zinc-800 hover:scale-105 hover:text-white  hover:bg-orange-700 rounded-lg pt-1 pb-1 pl-1  font-bold">
+          <li className="mb-7  md:mb-5   text-white hover:scale-105 hover:bg-lime-400 hover:text-slate-900 rounded-lg pt-1 pb-1 pl-1  font-bold">
             <ScrollLink to="home" smooth={true} duration={500} className='  cursor-pointer text-2xl md:text-xl'>
               <FontAwesomeIcon icon={faHome} className="mr-3" />
               Home
             </ScrollLink>
           </li>
-          <li className="mb-7  md:mb-5 text-zinc-800 hover:scale-105 hover:text-white  hover:bg-orange-700 rounded-lg pt-1 pb-1 pl-1  font-bold">
-            <ScrollLink to="fillSadhanaCard" smooth={true} duration={500} className='  cursor-pointer text-2xl md:text-xl'>
-              <FontAwesomeIcon icon={faAddressCard} className="mr-3" />
-              Sadhana Card
-            </ScrollLink>
+          <li className="mb-7  md:mb-5  text-white hover:scale-105 hover:bg-lime-400 hover:text-slate-900 rounded-lg pt-1 pb-1 pl-1  font-bold">
+             <FontAwesomeIcon icon={faAddressCard} className="mr-3" />
+             <button  className='text-2xl cursor-pointer md:text-xl' onClick={handleSadhana}>Fitness Card</button>
+            
           </li>
-          <li className="mb-7  md:mb-5 text-zinc-800 hover:scale-105 hover:text-white  hover:bg-orange-700 rounded-lg pt-1 pb-1 pl-1  font-bold">
-            <ScrollLink to="historyView" smooth={true} duration={500} className='  cursor-pointer text-2xl md:text-xl'>
-              <FontAwesomeIcon icon={faHistory} className="mr-3" />
-              History View
-            </ScrollLink>
+          <li className="mb-7  md:mb-5  text-white hover:scale-105 hover:bg-lime-400 hover:text-slate-900 rounded-lg pt-1 pb-1 pl-1  font-bold">
+            
+            <FontAwesomeIcon icon={faHistory} className="mr-3" />
+            <button  className='text-2xl cursor-pointer md:text-xl' onClick={handleHistory}>History</button>
+            
           </li>
-          <li className="mb-7  md:mb-5 text-zinc-800 hover:scale-105 hover:text-white  hover:bg-orange-700 rounded-lg pt-1 pb-1 pl-1  font-bold">
-            <ScrollLink to="messageSection" smooth={true} duration={500} className='  cursor-pointer text-2xl md:text-xl'>
-              <FontAwesomeIcon icon={faUserFriends} className="mr-3" />
-              Friends 
-            </ScrollLink>
-          </li>
-          
-          
-          
-          {/* <li className='  backdrop-blur-md pl-4 p-1 mb-3 rounded-xl'>
-            <p className='text-xl  font-bold text-gray-500 pb-1 pl-4 '>Others</p>
-          </li> */}
-          <li className="mb-7  md:mb-5 text-gray-800 hover:scale-105 hover:bg-orange-700 rounded-lg pt-1 pb-1 pl-1 hover:text-white  font-bold">
-            <ScrollLink to="editProfile" smooth={true} duration={500} className='  cursor-pointer text-2xl md:text-xl'>
+          <li className="mb-7  md:mb-5  text-white hover:scale-105 hover:bg-lime-400 hover:text-slate-900 rounded-lg pt-1 pb-1 pl-1  font-bold">
+            <FontAwesomeIcon icon={faUserFriends} className="mr-3" />
+              <button  className='text-2xl cursor-pointer md:text-xl' onClick={handleFriends}>Friends</button>
+          </li>  
+
+
+          <li className="mb-7  md:mb-5  text-white hover:scale-105  rounded-lg pt-1 pb-1 pl-1 hover:bg-lime-400 hover:text-slate-900  font-bold">
+
               <FontAwesomeIcon icon={faEdit} className="mr-3 " />
-              Edit Profile
-            </ScrollLink>
+              <button  className='text-2xl cursor-pointer md:text-xl' onClick={handleEdit}>Edit Profile</button>
+              
+            
           </li>
-          <li className="mb-7  md:mb-5 text-gray-800 hover:scale-105 hover:text-white   hover:bg-orange-700 rounded-lg pt-1 pb-1 pl-1  font-bold">
+          <li className="mb-7  md:mb-5  text-white hover:scale-105 hover:bg-lime-400 hover:text-slate-900 rounded-lg pt-1 pb-1 pl-1  font-bold">
             <ScrollLink to="aboutUs" smooth={true} duration={500} className='  cursor-pointer text-2xl md:text-xl'>
               <FontAwesomeIcon icon={faInfoCircle} className="mr-3" />
               About Us
             </ScrollLink>
           </li>
-          <li className="mb-7 text-gray-800 hover:scale-105 hover:text-white hover:bg-orange-700 rounded-lg pt-1 pb-1  pl-1 font-bold">
+          <li className="mb-7  text-white hover:scale-105 hover:bg-lime-400 hover:text-slate-900 rounded-lg pt-1 pb-1  pl-1 font-bold">
             <FontAwesomeIcon icon={faSignOutAlt} className="mr-3 pl-1" />
             <button  className='text-2xl cursor-pointer md:text-xl' onClick={handleLogout}>Logout</button>
           </li>
         </ul>
       </div>
-
       <div className={`flex-1 ${isSmallScreen ? 'pl-1' : 'sm:pl-64 md:pl-64'}`}>
-      <Element name="home" className="text-gray-800 mb-8">
-          <div className="flex flex-col ml-10 justify-center mt-8">
-            <p className="text-4xl font-LO  mb-4 tracking-wider">Welcome!</p>
+      <Element name="home" className=" text-white   bg-gradient-to-l from-neutral-800 to-gray-800">
+          <div className="flex flex-col ml-10 justify-center ">
+            <p className="text-4xl font-LO  mb-4 tracking-wider mt-8">Welcome</p>
             <div className='flex flex-row '>
               <p className="md:text-2xl text-xl font-light font-sans w-3/4 md:w-2/3 ">
-                Step into your sacred space on the Sadhana Dashboard. Embrace the tranquility of this spiritual journey that awaits you. May each moment here bring you closer to inner peace and deepen your connection with your spiritual self. Hari bol!
+              
+              Track progress, set goals, and stay motivated with us. This isn't just a 
+              workout tracker; it's a community. Explore your dashboard, challenge limits, 
+              and see friends' progress for inspiration. Let's push boundaries, break records, 
+              and celebrate victories together. Ready to start your fitness journey? Let's progress together!
               </p>
               <img src={logo} className='md:flex hidden  mr-8 w-32 h-32 ml-14 rounded-xl' alt="Logo" />
             </div>
-            <div className="border-t-8 mt-16 mb-8 md:mb-16 border-amber-800    bg-gradient-to-r from-yellow-500 to to-orange-500 mr-8 border-b-8 border-1 rounded-lg">
+            <div className="border-t-4 mt-16 mb-8 md:mb-16 border border-lime-400 bg-gradient-to-r from-slate-950 to-zinc-900 mr-8 border-b-4 border-1 rounded-lg">
             <center>
-              <p className="md:text-4xl text-2xl text-white font-LO mt-4 mb-4">Spiritual Insights</p>
-              {/* <p className=' text-sm md:hidden flex m-4'>"Chanting is the process of cleansing the mirror of the mind. "</p> */}
-              
-              {/* <div className="md:text-2xl text-white text-xs w-2/3 md:flex hidden  md:w-3/4 mt-4 mb-6" style={{ height: '7em', overflow: 'hidden', position: 'relative' }}> */}
+              <p className="md:text-4xl text-2xl text-white font-LO mt-4 mb-4">Stay Fit</p>
+             
               <div
                 className="md:text-2xl text-white text-sm w-full  overflow-hidden md:w-3/4 mt-4 mb-6"
                 style={{
-                  height: isSmallScreen ? '10em' : '7em', // Adjust height based on screen size
+                  height: isSmallScreen ? '10em' : '7em', 
                   overflow: 'hidden',
                   position: 'relative',
                 }}>
@@ -178,76 +180,41 @@ const Dashboard = () => {
                 ))}
               </div>
             </center>
-          </div>          
-            <div className="mt-8 border-1 border-t-8 border-b-8 shadow-xl z- shadow-orange-50  border-amber-800  rounded-lg  bg-orange-100 mr-6 ">
-              <center><p className="text-4xl  font-LO tracking-wide text-gray-800 mb-2 m-8">Vaishnava Calendar (Gourabda 537)</p></center>
-              <Calendar  data={EventCalendarData} />
-            </div>
-          </div>
-        </Element>
-        <Element name="fillSadhanaCard" className='h-screen'>
-          <center><h2 className="text-4xl font-LO mb-8 mt-8"> Sadhana Card</h2></center>
-          
-        </Element>
-        <Element name="historyView" className='h-screen'>
-          <center><h2 className="text-4xl font-LO mb-8">Your History</h2></center>
-        </Element>
-        <Element name="messageSection" className=' '>
-          <center><h2 className="text-4xl font-LO mb-8">Friends</h2></center>
-          <div className=' flex flex-col items-center'>
             
-            <FriendsList />
-
+          </div>
           </div>
         </Element>
-        <Element className=''>
-          <center>
-          <div className='mt-8 md:w-3/4 w-auto p-4 m-5  bg-gray-100 shadow-xl rounded-2xl md:mb-14 mb-8'>
-          <h1 className="text-2xl font-bold mb-4 ">Connect with your Friends</h1>
-            <Message />
-          <h1 className="text-2xl font-bold mb-4 ">Connect with your Friends</h1>
-            <Rec />
-          </div>
-
-          </center>
-        </Element>
-        <Element>
-        <center><h2 className="text-4xl font-LO mb-8">Edit Profile</h2></center>
-          <Edit />
-        </Element>
-        <Element name="aboutUs" className=''>
-          <div className="text-gray-800 text-xl p-8 tracking-wide">
+        <Element name="aboutUs" className='bg-gradient-to-l from-neutral-800 to-gray-800'>
+          <div className=" text-white text-xl p-8 tracking-wide">
             <center><h2 className="text-4xl font-LO mb-8">About Us</h2></center>
-            <p>
-              Welcome to <span className="text-yellow-500 font-bold">ISKCON Sadhana Sharing</span>, your spiritual companion for effortless Sadhana sharing.
+            <p className='font-light font-sans'>
+              At<span className="font-bold font-LO"> FitConnect</span> we believe that achieving fitness goals is not just about individual effort , it's about being part of a supportive community that encourages and celebrates every step of your journey. Our platform goes beyond traditional fitness trackers by incorporating a holistic approach to wellness, including sleep and wake-up time tracking, personalized goal setting, progress visualization, and social interaction with friends.
             </p>
-            <h3 className="text-2xl font-bold mt-6 mb-3">Our Vision:</h3>
-            <p>
-              Envisioning a world where spirituality seamlessly integrates into daily life. Transform your Sadhana journey with our accessible and connected platform.
-            </p>
-            <h3 className="text-2xl font-bold mt-6 mb-3">Why ISKCON Sadhana Sharing?</h3>
-            <p className='mb-3'>
-              <span className="font-bold">Effortless Connectivity:</span> Automate Sadhana sharing with your Guide and a devoted friend, bidding farewell to manual reporting.
+            
+           
+            <p className='mb-3 mt-3'>
+              <span className="">Track Your Fitness Goals:</span> <span className='font-light font-sans'>FitConnect empowers you to set personalized fitness goals tailored to your lifestyle and aspirations. Whether you're aiming to run a marathon, build muscle, or simply improve your overall health, our intuitive interface makes it easy to track your progress and stay accountable.</span>
             </p>
             <p className='mb-3'>
-              <span className="font-bold">Community and Support:</span> Join a community of like-minded spiritual seekers, sharing experiences and encouragement.
+              <span className="font-bold">Earn Your Fitness Score:</span> <span className='font-light font-sans'>Our unique Fitness Score algorithm evaluates various factors, including activity level, sleep quality, and goal adherence, to provide you with a comprehensive assessment of your overall fitness. Aim for a higher score to unlock achievements and milestones on your fitness journey.</span>
             </p>
+           
             <p  className='mb-3'>
-              <span className="font-bold">Privacy Matters:</span> Prioritize the security and confidentiality of your Sadhana data, respecting the sacredness of your practice.
+              <span className="font-bold">Connect with Friends:</span> <span className='font-light font-sans'>Fitness is more fun with friends! FitConnect allows you to connect with like-minded individuals, share your progress, and provide mutual support and motivation. Whether you're cheering each other on or competing for milestones, our community fosters camaraderie and encouragement.</span>
             </p>
             <p className='mb-3'>
-              <span className="font-bold">Guidance for Growth:</span> Receive personalized insights and guidance, making ISKCON Sadhana Sharing your supportive companion on your spiritual journey.
+              <span className="font-bold">Monitor Sleep and Wake-up Time:</span> <span className='font-light font-sans'>Understanding the importance of rest and recovery, FitConnect allows you to monitor your sleep patterns and wake-up times. By providing insights into your sleep quality and duration, we help you optimize your rest to enhance your overall well-being and performance.</span>
             </p>
-            <p className='mb-3'>
-              Embark on this journey with <span className="text-yellow-500 font-bold">ISKCON Sadhana Sharing</span> and make Sadhana sharing a joyful and enriching experience. Embrace the transformative power of daily spiritual practice.
+            <p className='mb-3 font-light font-sans'>
+                 Join the <span className='font-bold font-LO'>FitConnect</span> community today and embark on a journey to a healthier, happier you!
             </p>
           </div>
         </Element>
         
-        {/* <center><hr className="border-t-2 border-dotted border-yellow-400 h-10  w-10" /></center> */}
-        <footer className=" bg-gradient-to-b from-yellow-300 to bg-amber-500 p-4">
-            <p className="text-center text-lg text-gray-800">© 2023 ISKCON Sadhana Sharing. All rights reserved.</p>
-            <p className="text-center text-lg text-gray-800">Hare Krishna</p>
+
+        <footer className=" bg-gradient-to-r from-slate-950 to-zinc-950 p-4">
+            <p className="text-center text-lg  text-white">© 2024 FitConnect. All rights reserved.</p>
+            <p className="text-center text-lg  text-white">Stay Fit and Healthy </p>
           </footer>
       </div>
     </div>
@@ -255,6 +222,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
 
 

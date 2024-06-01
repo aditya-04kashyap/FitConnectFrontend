@@ -1,35 +1,61 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const ReceivedMessagesDashboard = () => {
+const ReceivedMessages = ({ userEmail }) => {
   const [receivedMessages, setReceivedMessages] = useState([]);
-  const userId = localStorage.getItem('userId');
+  const [showAllMessages, setShowAllMessages] = useState(false);
 
   useEffect(() => {
+    const userEmail = localStorage.getItem('userEmail');
     // Fetch received messages when the component mounts
-    fetch(`http://localhost:8081/received-messages/${userId}`)
+    fetch(`https://fitconnectbackend.onrender.com/received-messages/${userEmail}`)
       .then(response => response.json())
       .then(data => {
-        setReceivedMessages(data);
+        // Ensure data is an array before setting the state
+        if (Array.isArray(data)) {
+          setReceivedMessages(data);
+        } else {
+          console.error('Received invalid data format:', data);
+        }
       })
-      .catch(error => {
-        console.error('Error fetching received messages:', error);
-      });
-  }, [userId]); // Dependency array ensures the effect runs whenever userId changes
+      .catch(error => console.error('Error fetching received messages:', error));
+  }, [userEmail]);
+
+  useEffect(() => {
+    console.log('Received Messages:', receivedMessages);
+  }, [receivedMessages]);
+
+  const displayedMessages = showAllMessages
+    ? receivedMessages
+    : receivedMessages.slice(0, 2);
 
   return (
-    <div>
-      <h2>Received Messages</h2>
-      <ul>
-        {receivedMessages.map(message => (
-          <li key={message.messageId}>
-            <p>{message.msg}</p>
-            <p>Sent by: {message.sndrName}</p>
-            <p>Sent on: {message.date}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="p-4 bg-gradient-to-bl from-neutral-800 to-gray-800 rounded-lg shadow-md">
+      
+      {displayedMessages.length === 0 ? (
+        <p className="text-white">No messages received.</p>
+      ) : (
+        <>
+          <ul className="space-y-3">
+            {displayedMessages.map((message, index) => (
+              <li key={index} className="border border-lime-400 p-4 rounded-md">
+                <p className="text-white font-semibold mb-1">Sender: {message.sndrName}</p>
+                <p className="text-white">Date: {message.date.substring(0, 10)}</p>
+                <p className="text-white">Message: {message.msg}</p>
+              </li>
+            ))}
+          </ul>
+          {receivedMessages.length > 2 && (
+            <button
+              className="mt-4 text-lime-400 cursor-pointer hover:underline"
+              onClick={() => setShowAllMessages(!showAllMessages)}
+            >
+              {showAllMessages ? 'Show Less' : 'Show More'}
+            </button>
+          )}
+        </>
+      )}
     </div>
   );
 };
 
-export default ReceivedMessagesDashboard;
+export default ReceivedMessages;

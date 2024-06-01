@@ -17,19 +17,37 @@ const EditProfile = () => {
   const [hear, setHear] = useState('');
   const [read, setRead] = useState('');
   const [serv, setServ] = useState('');
+  const [mtw, setMtw] = useState('');
 
+  const [sleepHour, setSleepHour] = useState('');
+  const [sleepMinute, setSleepMinute] = useState('');
+  const [sleepAmPm, setSleepAmPm] = useState('');
 
+  const [wakeupHour, setWakeupHour] = useState('');
+  const [wakeupMinute, setWakeupMinute] = useState('');
+  const [wakeupAmPm, setWakeupAmPm] = useState('');
+  
   const navigate = useNavigate();
+  const convertTimeToValue = (hour, minute, amPm) => {
+    let value = 0;
+    if (amPm === 'pm') {
+      value += 120;
+    }
+
+    value += hour * 10 + (minute / 6);
+
+    return value;
+  };
 
   const editProfile = () => {
-    if (!email || !city || gender === '0' || !country || !chant || !hear || !read || !serv) {
+    if (!email || !city || gender === '0' || !country ) {
       alert('Please fill in all  fields!');
       return;
     }
 
     setIsLoading(true);
-
-    fetch('http://localhost:8081/editProfile', {
+  
+    fetch('https://fitconnectbackend.onrender.com/editProfile', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,6 +63,9 @@ const EditProfile = () => {
         hear,
         read,
         serv,
+        mtw,
+        sleepTime: convertTimeToValue(sleepHour, sleepMinute, sleepAmPm),
+        wakeupTime: convertTimeToValue(wakeupHour, wakeupMinute, wakeupAmPm),
       }),
     })
       .then(response => response.json())
@@ -74,10 +95,10 @@ const EditProfile = () => {
     setCounselorEmails('');
   };
 
-  
+
 
   return (
-    <div name="editProfile" className="md:max-w-md  lg:max-w-xl bg-gray-100 sm:max-w-sm  mx-auto mt-8 p-4 mb-14 border  rounded-lg  shadow-2xl">
+    <div name="editProfile" className="md:max-w-md  lg:max-w-xl bg-gradient-to-r text-white from-slate-950 to-zinc-900  sm:max-w-sm  mx-auto mt-8 p-4  border border-lime-400  rounded-lg  shadow-2xl">
       <center>
         {/* <h2 className="text-2xl font-semibold mb-4">Edit Profile</h2> */}
       </center>
@@ -88,7 +109,7 @@ const EditProfile = () => {
           required
           type="email"
           id="email"
-          className="border border-gray-300 p-2 rounded-lg shadow-md shadow-orange-200 outline-none hover:bg-gray-100 w-full"
+          className="border p-2 rounded-lg outline-none text-slate-900 hover:text-white hover:bg-gray-700 bg-gray-100 w-full"
           onChange={(e) => setEmail(e.target.value)}
           
         />
@@ -100,7 +121,7 @@ const EditProfile = () => {
           required
           type="text"
           id="city"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
+          className="border p-2 rounded-lg outline-none text-slate-900 hover:text-white hover:bg-gray-700 bg-gray-100 w-full"
           onChange={(e) => setCity(e.target.value)}
         />
       </div>
@@ -109,7 +130,7 @@ const EditProfile = () => {
         <label htmlFor="gender">Gender:</label>
         <select
           id="gender"
-          className="border border-gray-300 p-2 rounded-lg mt-1 shadow-md shadow-orange-200 outline-none hover:bg-gray-100 w-full"
+          className="border p-2 rounded-lg outline-none text-slate-900 hover:text-white hover:bg-gray-700 bg-gray-100 w-full"
           onChange={(e) => setGender(e.target.value)}
           value={gender}
         >
@@ -126,12 +147,12 @@ const EditProfile = () => {
           
           type="text"
           id="country"
-          className="border border-gray-300 p-2 rounded-lg shadow-md   mt-1 shadow-orange-200  outline-none   hover:bg-gray-100 w-full"
+          className="border p-2 rounded-lg outline-none text-slate-900 hover:text-white hover:bg-gray-700 bg-gray-100 w-full"
           onChange={(e) => setCountry(e.target.value)}
           required
         />
       </div>
-
+      
       {/* Friends Section */}
       <div className="mb-5">
         <label htmlFor="friendEmails">Friend's Email(s):</label>
@@ -139,11 +160,11 @@ const EditProfile = () => {
           type="text"
           id="friendEmails"
           
-          className="border border-gray-300  p-2 rounded-lg shadow-md mb-4 mt-1 shadow-orange-200 outline-none hover:bg-gray-100 w-full"
+          className="border p-2 rounded-lg outline-none text-slate-900 hover:text-white hover:bg-gray-700 bg-gray-100 w-full"
           value={friendEmails}
           onChange={(e) => setFriendEmails(e.target.value)}
         />
-        <center><button className='bg-orange-200 rounded-xl text-sm p-2 pr-5 pl-5 hover:bg-orange-400 hover:text-white hover:scale-105' onClick={handleAddFriends}>Add Friends</button></center>
+        <center><button className='bg-lime-300 hover:shadow-md hover:shadow-lime-200 hover:bg-lime-400 rounded-xl text-slate-900 text-sm p-2 pr-5 pl-5 mt-2 hover:bg-y-600  hover:scale-105' onClick={handleAddFriends}>Add Friends</button></center>
 
         <div className='hidden'>
           <h2>Friends List:</h2>
@@ -154,142 +175,10 @@ const EditProfile = () => {
           </ul>
         </div>
       </div>
-
-      {/* counselor section */}
-            {/* Counselor Section */}
-      <div className="mb-5">
-        <label htmlFor="counselorEmails">Counselor's Email(s):</label>
-        <input
-          type="text"
-          id="counselorEmails"
-          className="border border-gray-300 p-2 rounded-lg shadow-md mb-4 mt-1 shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          value={counselorEmails}
-          onChange={(e) => setCounselorEmails(e.target.value)}
-        />
-        <center>
-          <button
-            className='bg-orange-200 rounded-xl text-sm p-2 hover:bg-orange-400 hover:text-white hover:scale-105'
-            onClick={handleAddCounselors}
-          >
-            Add Counselors
-          </button>
-        </center>
-
-        <div className='hidden'>
-          <h2>Counselors List:</h2>
-          <ul>
-            {counselors.map((counselor, index) => (
-              <li key={index}>{counselor}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      {/* <div className="mb-5">
-        <label htmlFor="Sleep">Sleep</label>
-        <input
-          type="text"
-          id="sleep"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setSleep(e.target.value)}
-        />
-      </div>
-      <div className="mb-5">
-        <label htmlFor="wakeup">Wake Up</label>
-        <input
-          type="text"
-          id="wakeup"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setWakeup(e.target.value)}
-        />
-      </div> 
-      <div className="mb-5">
-        <label htmlFor="chant">Chant</label>
-        <input
-          type="text"
-          id="chant"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setChant(e.target.value)}
-        />
-      </div>
-      <div className="mb-5">
-        <label htmlFor="hear">Hear</label>
-        <input
-          type="text"
-          id="hear"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setHear(e.target.value)}
-        />
-      </div>
-      <div className="mb-5">
-        <label htmlFor="read">Read</label>
-        <input
-          type="text"
-          id="read"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setRead(e.target.value)}
-        />
-      </div>
-      <div className="mb-5">
-        <label htmlFor="serve">Serve</label>
-        <input
-          type="text"
-          id="serve"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setServe(e.target.value)}
-        />
-      </div>
-      <div className="mb-5">
-        <label htmlFor="city">Rest</label>
-        <input
-          type="text"
-          id="rest"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setRest(e.target.value)}
-        /> */}
-      {/* </div> */}
-      <div className="mb-5">
-        <label htmlFor="chant">Chant</label>
-        <input
-          required
-          type="text"
-          id="chant"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setChant(e.target.value)}
-        />
-      </div>
-      <div className="mb-5">
-        <label htmlFor="hear">Hear</label>
-        <input
-          required
-          type="text"
-          id="hear"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setHear(e.target.value)}
-        />
-      </div>
-      <div className="mb-5">
-        <label htmlFor="read">Read</label>
-        <input
-          required
-          type="text"
-          id="read"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setRead(e.target.value)}
-        />
-      </div>
-      <div className="mb-5">
-        <label htmlFor="serve">Serve</label>
-        <input
-          required
-          type="text"
-          id="serv"
-          className="border border-gray-300 p-2 rounded-lg shadow-md  shadow-orange-200 outline-none hover:bg-gray-100 w-full"
-          onChange={(e) => setServ(e.target.value)}
-        />
-      </div>
+      <center></center>
       <center>
         <button
-          className="bg-orange-500 text-white pl-4 pr-4 p-2 mb-2 hover:scale-105   rounded-md shadow-md shadow-orange-600 hover:bg-orange-700 cursor-pointer"
+          className="bg-lime-500 hover:shadow-md hover:shadow-lime-300 text-slate-900 pl-4 pr-4 p-2 mb-2 hover:scale-105   rounded-md shadow-sm shadow-lime-400 hover:bg-lime-700 cursor-pointer"
           onClick={editProfile}
           disabled={isLoading}
         >
@@ -306,5 +195,4 @@ const EditProfile = () => {
     </div>
   );
 };
-
 export default EditProfile;
