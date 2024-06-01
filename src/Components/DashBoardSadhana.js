@@ -139,7 +139,7 @@ const Dashboard = () => {
           </li>
         </ul>
       </div>
-      <div className={`flex-1 ${isSmallScreen ? 'pl-1' : 'sm:pl-64 md:pl-64'}`}>
+      <div className={`flex-1 ${isSmallScreen ? 'pl-0' : 'sm:pl-64 md:pl-64'}`}>
       
       <Element name="fillSadhanaCard" className='bg-gradient-to-bl from-neutral-800 to-gray-800 pb-8 '>
             <center><h2 className="text-4xl text-white font-LO  pt-8"> Fitness Card</h2></center>
