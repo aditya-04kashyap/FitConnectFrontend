@@ -156,6 +156,7 @@ const EditProfile = () => {
       {/* Friends Section */}
       <div className="mb-5">
         <label htmlFor="friendEmails">Friend's Email(s):</label>
+        <p className='mb-1'><span className='font-sans font-light'>Please provide all friend's emails, past and present, separated by commas.</span></p>
         <input
           type="text"
           id="friendEmails"
