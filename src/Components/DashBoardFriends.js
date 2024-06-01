@@ -142,7 +142,7 @@ const Dashboard = () => {
           </li>
         </ul>
       </div>
-      <div className={`flex-1 ${isSmallScreen ? 'pl-1' : 'sm:pl-64 md:pl-64'}`}>
+      <div className={`flex-1 ${isSmallScreen ? 'pl-0' : 'sm:pl-64 md:pl-64'}`}>
       
       <Element name="messageSection" className='bg-gradient-to-l from-neutral-800 to-gray-800  pb-10  '>
           <center><h2 className="text-4xl font-LO pb-8 pt-8 text-white">Friends</h2></center>
