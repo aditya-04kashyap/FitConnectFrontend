@@ -60,10 +60,6 @@ const SadhanaCard = () => {
   const marksPlaceholder = "-";
   const handleSave = async () => {
 
-    if (!sleepTime|| !chantComplete || !wakeupTime ||  !timeWaste ) {
-      alert('Please fill in all  fields!');
-      return;
-    }
     const totalSleepTime = convertTimeToValue(sleepHour, sleepMinute, sleepAmPm);
     const totalWakeupTime = convertTimeToValue(wakeupHour, wakeupMinute, wakeupAmPm);
 
